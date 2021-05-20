@@ -147,6 +147,10 @@ class Input {
   }
 
   _showCounter() {
+    const counters = SelectorEngine.find('.form-counter', this._element);
+    if (counters.length > 0) {
+      return;
+    }
     this._counterElement = document.createElement('div');
     Manipulator.addClass(this._counterElement, CLASSNAME_COUNTER);
     const actualLength = this.input.value.length;
@@ -189,6 +193,7 @@ class Input {
   }
 
   _applyDivs() {
+    const allNotchWrappers = SelectorEngine.find(SELECTOR_NOTCH, this._element);
     const notchWrapper = element('div');
     Manipulator.addClass(notchWrapper, CLASSNAME_NOTCH);
     this._notchLeading = element('div');
@@ -197,7 +202,9 @@ class Input {
     Manipulator.addClass(this._notchMiddle, CLASSNAME_NOTCH_MIDDLE);
     this._notchTrailing = element('div');
     Manipulator.addClass(this._notchTrailing, CLASSNAME_NOTCH_TRAILING);
-
+    if (allNotchWrappers.length >= 1) {
+      return;
+    }
     notchWrapper.append(this._notchLeading);
     notchWrapper.append(this._notchMiddle);
     notchWrapper.append(this._notchTrailing);
