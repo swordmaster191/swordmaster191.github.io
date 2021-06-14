@@ -19,109 +19,7 @@
 	  
 	 <style>
 	
-.label {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-//The good stuff
-.tooltip-toggle {
-  cursor: pointer;
-  position: relative;
-
-  svg {
-    height: 18px;
-    width: 18px;
-  }
-  
-  //Tooltip text container
-  &::before {
-    position: absolute;
-    top: -80px;
-    left: -80px;
-    background-color: #2B222A;
-    border-radius: 5px;
-    color: #fff;
-    content: attr(aria-label); //This pulls in the text from the element with the tooltip
-    padding: 1rem;
-    text-transform: none;
-    transition: all 0.5s ease;
-    width: 160px;
-  }
-
-  //Tooltip arrow
-  &::after {
-    position: absolute;
-    top: -12px;
-    left: 9px;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 5px solid #2B222A;
-    content: " ";
-    font-size: 0;
-    line-height: 0;
-    margin-left: -5px;
-    width: 0;
-  }
-  
-  //Setting up the transition
-  &::before,
-  &::after {
-    color: #efefef;
-    font-family: monospace;
-    font-size: 16px;
-    opacity: 0;
-    pointer-events: none;
-    text-align: center;
-  }
-  
-  //Triggering the transition
-  &:focus::before,
-  &:focus::after,
-  &:hover::before,
-  &:hover::after {
-    opacity: 1;
-    transition: all 0.75s ease;
-  }
-}
-		 .fab{
-			 transition: all .2s ease-out;
-			 margin-left: 20px;
-			 color: #555;
-		 }
-		 .fas{
-			 transition: all .2s ease-out;
-			 margin-left: 20px;
-			 color: #555;
-		 }
-		 
-		 .fa-linkedin:hover{
-			 transition: all .2s ease-in;
-			 color: #2867B2;
-		 }
-		 .fa-github:hover{
-			 transition: all .2s ease-in;
-			 color: #333;
-		 }
-		 .fa-discord:hover{
-			 transition: all .2s ease-in;
-			 color: #5865F2
-		 }
-		 .fa-steam:hover{
-			 transition: all .2s ease-in;
-			 color: #00adee
-		 }
-		 .fa-twitch:hover{
-			 transition: all .2s ease-in;
-			 color: #9146ff
-		 }
-		 .fa-envelope:hover{
-			 transition: all .2s ease-in;
-			 color: #0072C6
-		 }
-	  
-	  
 	  </style>
   </head>
 	
@@ -162,12 +60,11 @@
 			<div class="label">
 				<span class="tooltip-toggle" aria-label="Sample text for your tooltip!" tabindex="0">
 					<a href="http://linkedin.swordmaster.tech"><i class="fab fa-linkedin fa-2x"></i></a></span>
-          	
-			<span class="tooltip-toggle" aria-label="GitHub" tabindex="0"><a href="http://github.swordmaster.tech"> <i class="fab fa-github fa-2x"></i></a></span>
-			<a href="#"> <i class="fab fa-discord fa-2x"></i></a>
-		  	<a href="http://steam.swordmaster.tech"> <i class="fab fa-steam fa-2x"></i></a>
-			<a href="http://twitch.swordmaster.tech"> <i class="fab fa-twitch fa-2x"></i></a>
-			<a href="mailto:contact@swordmaster.tech"> <i class="fas fa-envelope fa-2x"></i></a>
+				<span class="tooltip-toggle" aria-label="GitHub" tabindex="0"><a href="http://github.swordmaster.tech"> <i class="give-space fab fa-github fa-2x"></i></a></span>
+			<a href="#"> <i class="fab give-space fa-discord fa-2x"></i></a>
+		  	<a href="http://steam.swordmaster.tech"> <i class="fab give-space fa-steam fa-2x"></i></a>
+			<a href="http://twitch.swordmaster.tech"> <i class="fab give-space fa-twitch fa-2x"></i></a>
+			<a href="mailto:contact@swordmaster.tech"> <i class="fas give-space fa-envelope fa-2x"></i></a>
 			
 			</div>
         </div>
