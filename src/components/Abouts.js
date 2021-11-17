@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
+import Image from "gatsby-image"
 import { IoMdCheckmarkCircleOutline} from 'react-icons/io'
 import { FaRegLightbulb } from "react-icons/fa";
 import { graphql, useStaticQuery } from "gatsby";
@@ -8,31 +9,51 @@ import { graphql, useStaticQuery } from "gatsby";
 const Abouts = () =>{
     const data = useStaticQuery(graphql`
     query {
-        allFile(
-          filter: {ext: {regex: "/(jpg)|(png)|(jpeg)/"}, name: {in: ["img", "img2"]}}
-        ) {
-          edges {
-            node {
-              childrenImageSharp {
-                gatsbyImageData(layout: FULL_WIDTH)
+        allImageSharp {
+            edges {
+              node {
+                id
+                fluid{
+                  src
+                  srcSet
+                  base64
+                  aspectRatio
+                  originalImg
+                  sizes        
+                }
               }
             }
           }
         }
-      }
+      
       
     `)
 
     return(
         <AboutsContainer>
-        <TopLine>
-            Abouts
+        <TopLine
+        data-sal="slide-right"
+        data-sal-duration="2000" // changes duration of the animation (from 200 to 2000 ms)
+        data-sal-delay="5" // adds delay to the animation (from 5 to 1000 ms)
+        data-sal-easing="ease" // sets easing for the animation (see easings.net for reference)
+        >
+            About me
         </TopLine>
-        <Description>
-            What my Abouts is
+        <Description
+        data-sal="slide-right"
+        data-sal-duration="2000" // changes duration of the animation (from 200 to 2000 ms)
+        data-sal-delay="50" // adds delay to the animation (from 5 to 1000 ms)
+        data-sal-easing="ease" // sets easing for the animation (see easings.net for reference)
+        >
+            Hello, I'm Krit Visitstump!
         </Description>
         <ContentWrapper>
-            <ColumnOne>
+            <ColumnOne
+            data-sal="slide-right"
+            data-sal-duration="2000" // changes duration of the animation (from 200 to 2000 ms)
+            data-sal-delay="50" // adds delay to the animation (from 5 to 1000 ms)
+            data-sal-easing="ease" // sets easing for the animation (see easings.net for reference)
+            >
                 <About>
                 <FaRegLightbulb />
                     <IoMdCheckmarkCircleOutline />
@@ -51,9 +72,8 @@ const Abouts = () =>{
                 </About>
             </ColumnOne>
             <ColumnTwo>
-                {data.allFile.edges.map((image, key) => (
-                    <Images key={key} image={image.node.childrenImageSharp.gatsbyImageData} alt={``}/>
-            ))}
+                {data.allImageSharp.edges.map(edge => 
+                    <Images fluid={edge.node.fluid}/>)}
                 
             </ColumnTwo>
         </ContentWrapper>
@@ -95,6 +115,10 @@ const ContentWrapper = styled.div`
 const ColumnOne = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
+
+    @media screen and (max-width: 768px){
+        grid-template-columns: 1fr;
+    }
 `
 const About = styled.div`
     padding-top: 1rem;
@@ -116,13 +140,13 @@ const ColumnTwo = styled.div`
     margin-top: 2rem;
     grid-gap: 10px;
 
-    @media screen and (max-width: 500px){
+    @media screen and (max-width: 768px){
         grid-template-columns: 1fr;
     }
     
 `
 
-const Images = styled(GatsbyImage)`
+const Images = styled(Image)`
     border-radius: 10px;
     height: 100%;
 `

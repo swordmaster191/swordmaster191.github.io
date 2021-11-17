@@ -4,8 +4,9 @@ import styled from "styled-components"
 import {FaBars} from "react-icons/fa"
 import {menuData} from "../data/MenuData"
 import { Button } from "./Button"
+import { css } from "styled-components"
 
-const Header = () => {
+const Header = ({props}) => {
   return(
     <Nav>
       <NavLink to="/">SwordMaster</NavLink>
@@ -25,6 +26,8 @@ const Header = () => {
   )
 }
 
+
+
 export default Header
 
 const Nav = styled.nav`
@@ -35,6 +38,10 @@ const Nav = styled.nav`
   padding: 0.5rem calc((100vw - 1300px) / 2);
   z-index: 100;
   position: relative;
+
+  ${props => props.secondary && css`
+    background: black;
+  `}
 `
 // The link to each of the pages
 const NavLink = styled(Link)`
@@ -43,7 +50,7 @@ const NavLink = styled(Link)`
   align-items: center;
   text-decoration: none;
   padding: 0 1rem;
-  height: 100%
+  height: 100%;
   cursor: pointer;
 `
 // Bar styling for mobile device

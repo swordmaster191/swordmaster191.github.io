@@ -20,10 +20,10 @@ const Footer = () => {
             <FooterLinksWrapper>
             <FooterLinkItems>
                 <FooterLinkTitle>Social Media</FooterLinkTitle>
-                <FooterLink to="/">LinkedIn</FooterLink>
-                <FooterLink to="/">GitHub</FooterLink>
-                <FooterLink to="/">Steam</FooterLink>
-                <FooterLink to="/">Twitch</FooterLink>
+                <FooterLink to="http://linkedin.swordmaster.tech/">LinkedIn</FooterLink>
+                <FooterLink to="http://github.swordmaster.tech/">GitHub</FooterLink>
+                <FooterLink to="http://steam.swordmaster.tech/">Steam</FooterLink>
+                <FooterLink to="http://twitch.swordmaster.tech/">Twitch</FooterLink>
             </FooterLinkItems>
             </FooterLinksWrapper>
         </FooterContainer>
@@ -47,7 +47,7 @@ const FooterDescription = styled.div`
         color: #f26a2e;
     }
 
-    @media screen and (max-width: 400px){
+    @media screen and (max-width: 500px){
         padding: 1rem;
     }
 `
@@ -55,7 +55,7 @@ const FooterLinksWrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 
-    @media screen and (max-width: 820px){
+    @media screen and (max-width: 768px){
         grid-template-columns: repeat(1fr);
     }
 
@@ -66,7 +66,7 @@ const FooterLinkItems = styled.div`
     align-items: flex-start;
     padding: 1rem 2rem;
 
-    @media screen and (max-width: 400px){
+    @media screen and (max-width: 500px){
         padding: 1rem;
     }
 
