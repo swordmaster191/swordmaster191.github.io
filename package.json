@@ -28,6 +28,7 @@
   },
   "devDependencies": {
     "gatsby-plugin-react-image-map": "^1.0.0-4",
+    "gh-pages": "^3.2.3",
     "prettier": "^2.4.1"
   },
   "keywords": [
