@@ -1,24 +1,25 @@
 import React from 'react'
 import styled from 'styled-components'
 import {GiEarthAmerica} from 'react-icons/gi'
-import {MdAirplanemodeActive, MdTimer} from 'react-icons/md'
+import {MdTimer} from 'react-icons/md'
 import {FaMoneyCheck} from 'react-icons/fa'
+import { GoCode } from 'react-icons/go'
 
 const StatsData = [
     {
         icon: (<GiEarthAmerica/>),
-        title: "Test",
-        desc: "Testing"
+        title: "Multilangual",
+        desc: "Fluent in Thai & English"
     },
     {
-        icon: (<MdAirplanemodeActive/>),
-        title: "Test 2",
-        desc: "Testing"
+        icon: (<GoCode/>),
+        title: "Code Ready",
+        desc: "Python, Java, C# & many more!"
     },
     {
         icon: (<MdTimer/>),
-        title: "Test 3",
-        desc: "Testing"
+        title: "Team Player",
+        desc: "Able to adapt to new environment quickly"
     },
     {
         icon: (<FaMoneyCheck/>),
