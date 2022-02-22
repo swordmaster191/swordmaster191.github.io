@@ -51,8 +51,14 @@ module.exports = {
     {
       resolve: `gatsby-plugin-scroll-reveal`,
       options: {
-          threshold: 1, // Percentage of an element's area that needs to be visible to launch animation
-          once: false, // Defines if animation needs to be launched once
+          threshold: 1,
+          disabled: true // Percentage of an element's area that needs to be visible to launch animation
+      }
+    },
+    {
+      resolve: "gatsby-plugin-anchor-links",
+      options: {
+        offset: -100
       }
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

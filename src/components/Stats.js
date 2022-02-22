@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import {GiEarthAmerica} from 'react-icons/gi'
 import {MdTimer} from 'react-icons/md'
-import {FaMoneyCheck} from 'react-icons/fa'
+import {FaHandsHelping} from 'react-icons/fa'
 import { GoCode } from 'react-icons/go'
 
 const StatsData = [
@@ -22,9 +22,9 @@ const StatsData = [
         desc: "Able to adapt to new environment quickly"
     },
     {
-        icon: (<FaMoneyCheck/>),
-        title: "Test 4",
-        desc: "Testing"
+        icon: (<FaHandsHelping/>),
+        title: "Volunteering",
+        desc: "Giving back to the community"
     }
 ]
 
@@ -36,11 +36,12 @@ const Stats = () => {
             data-sal-duration="2000" // changes duration of the animation (from 200 to 2000 ms)
             data-sal-delay="5" // adds delay to the animation (from 5 to 1000 ms)
             data-sal-easing="ease" // sets easing for the animation (see easings.net for reference)
+            id="experiences"
             >Experiences</Heading>
             <Wrapper
             data-sal="slide-up"
             data-sal-duration="2000" // changes duration of the animation (from 200 to 2000 ms)
-            data-sal-delay="150" // adds delay to the animation (from 5 to 1000 ms)
+            data-sal-delay="500" // adds delay to the animation (from 5 to 1000 ms)
             data-sal-easing="ease" // sets easing for the animation (see easings.net for reference)
             >
                 {StatsData.map((item, index) => {

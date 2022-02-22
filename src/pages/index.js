@@ -6,6 +6,7 @@ import Seo from "../components/seo"
 import Hero from "../components/Hero"
 import Abouts from "../components/Abouts"
 import Stats from "../components/Stats"
+import Contact from "../components/Contact"
 
 const IndexPage = () => (
   <Layout>

@@ -2,13 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import { Button } from "./Button";
 import Video from "../assets/videos/video.mp4";
+import { AnchorLink } from "gatsby-plugin-anchor-links";
 
 const Hero = () => {
     return (
         <HeroContainer>
-            <HeroBackground>
-                <VideoBackground src={Video} type="video/mp4" autoPlay loop muted playsInline />
-            </HeroBackground>
             <HeroContent>
                 <HeroItems
                 data-sal="fade"
@@ -16,11 +14,16 @@ const Hero = () => {
                 data-sal-delay="100" // adds delay to the animation (from 5 to 1000 ms)
                 data-sal-easing="easeInSine" // sets easing for the animation (see easings.net for reference)
                 >
-                    <HeroH1>Krit Visitstump</HeroH1>
-                    <HeroP>An aspiring college student majoring in Computer Science</HeroP>
-                    <Button primary="true" big="true" round="true" to="/about">About Me</Button>
+                    <HeroH1>KRIT VISITSTUMP</HeroH1>
+                    <HeroP>Passionate college student majoring in Computer Science</HeroP>
+                    <Button primary="true" big="true" round="true" to="#about">About Me</Button>
                 </HeroItems>
             </HeroContent>
+            <HeroItemsVideo>
+            <HeroContentVideo>
+            <VideoBackground src={Video} type="video/mp4" autoPlay loop muted playsInline />
+            </HeroContentVideo>
+            </HeroItemsVideo>
         </HeroContainer>
     )
 }
@@ -28,9 +31,9 @@ const Hero = () => {
 export default Hero
 
 const HeroContainer = styled.div`
-    background: #0c0c0c;
+    background: #393e46;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     height: 100vh;
     padding: 0 1rem;
@@ -55,6 +58,16 @@ const HeroContainer = styled.div`
     }
 
 `
+const HeroContentVideo = styled.div`
+    display: grid;
+    grid-template-columns: fr;
+    margin-top: 2rem;
+    grid-gap: 10px;
+
+    @media screen and (max-width: 768px){
+        grid-template-columns: 1fr;
+    }
+`
 
 const HeroBackground = styled.div`
     position: absolute;
@@ -68,10 +81,9 @@ const HeroBackground = styled.div`
 `
 
 const VideoBackground = styled.video`
-    width: 100%;
-    height: 100%;
-    -o-object-fit: cover;
-    object-fit: cover;
+    width: 95%;
+    height: 95%;
+    filter: grayscale(100%);
 `
 
 const HeroContent = styled.div`
@@ -85,8 +97,8 @@ const HeroItems = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    text-align: center;
+    align-items: baseline;
+    text-align: left;
     height: 100vh;
     max-height: 100%;
     padding: 0;
@@ -95,11 +107,26 @@ const HeroItems = styled.div`
     font-weight: bold;
 `
 
+const HeroItemsVideo = styled.div`
+display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    text-align: right;
+    height: 100vh;
+    max-height: 100%;
+    padding: 0;
+    color: #fff;
+    line-height: 1.1;
+    font-weight: bold;
+
+`
+
 const HeroH1 = styled.div`
+    color: #f89d13;
     font-size: clamp(1.5rem, 6vw, 4rem);
     margin-bottom: 1.5rem;
     letter-spacing: 3px;
-    padding: 0 1rem;
 `
 
 const HeroP = styled.p`

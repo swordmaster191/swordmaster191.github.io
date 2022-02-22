@@ -3,13 +3,23 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import {FaBars} from "react-icons/fa"
 import {menuData} from "../data/MenuData"
-import { Button } from "./Button"
 import { css } from "styled-components"
+import {AiOutlineGithub, AiFillLinkedin} from "react-icons/ai"
+
+const iconsLink = [
+  {
+      icon: (<AiOutlineGithub/>),
+      link: "http://github.swordmaster.tech/"
+  },
+  {
+      icon: (<AiFillLinkedin/>),
+      link: "http://linkedin.swordmaster.tech/"
+  }
+]
 
 const Header = ({props}) => {
   return(
     <Nav>
-      <NavLink to="/">SwordMaster</NavLink>
       <Bars />
       <NavMenu>
         {menuData.map((item, index) => (
@@ -18,9 +28,12 @@ const Header = ({props}) => {
           </NavLink> 
         ))}
       </NavMenu>
-
       <NavBtn>
-        <Button primary="true" round="true" to="/contact">Contact me!</Button>
+      {iconsLink.map((item, index) => (
+        <NavLinkIcon to={item.link} key={index}>
+          {item.icon}
+        </NavLinkIcon> 
+      ))}
       </NavBtn>
     </Nav>
   )
@@ -31,7 +44,7 @@ const Header = ({props}) => {
 export default Header
 
 const Nav = styled.nav`
-  background: transparent;
+  background: #222831;
   height: 80px;
   display: flex;
   justify-content: space-between;
@@ -52,7 +65,22 @@ const NavLink = styled(Link)`
   padding: 0 1rem;
   height: 100%;
   cursor: pointer;
+  
 `
+
+// The link to each of the pages
+const NavLinkIcon = styled(Link)`
+  color: #fff;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 .5rem;
+  font-size: 1.5rem;
+  height: 100%;
+  cursor: pointer;
+  
+`
+
 // Bar styling for mobile device
 // Appears if width < 768 pixels
 const Bars = styled(FaBars)`

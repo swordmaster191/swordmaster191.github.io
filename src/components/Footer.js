@@ -1,29 +1,29 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
+import {AiOutlineGithub, AiFillLinkedin} from "react-icons/ai"
+
+const iconsLink = [
+    {
+        icon: (<AiOutlineGithub/>),
+        link: "http://github.swordmaster.tech/"
+    },
+    {
+        icon: (<AiFillLinkedin/>),
+        link: "http://linkedin.swordmaster.tech/"
+    }
+  ]
 
 const Footer = () => {
     return (
         <FooterContainer>
-            <FooterLinksWrapper>
                 <FooterDescription>
                 <h1>SwordMaster</h1>
-                <p>Hello world!</p>
+                <p>©2022 Krit Visitstump</p>
                 </FooterDescription>
-                <FooterLinkItems>
-                    <FooterLinkTitle>Navigation</FooterLinkTitle>
-                    <FooterLink to="/">Home</FooterLink>
-                    <FooterLink to="/">About</FooterLink>
-                    <FooterLink to="/">Experiences</FooterLink>
-                </FooterLinkItems>
-            </FooterLinksWrapper>
-            <FooterLinksWrapper>
+                <FooterLinksWrapper>
             <FooterLinkItems>
-                <FooterLinkTitle>Social Media</FooterLinkTitle>
-                <FooterLink to="http://linkedin.swordmaster.tech/">LinkedIn</FooterLink>
-                <FooterLink to="http://github.swordmaster.tech/">GitHub</FooterLink>
-                <FooterLink to="http://steam.swordmaster.tech/">Steam</FooterLink>
-                <FooterLink to="http://twitch.swordmaster.tech/">Twitch</FooterLink>
+            
             </FooterLinkItems>
             </FooterLinksWrapper>
         </FooterContainer>
@@ -37,14 +37,14 @@ const FooterContainer = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     color: #000;
-    background: #fafafb;
+    background: #f2f2f2;
 `
 const FooterDescription = styled.div`
     padding: 0 2rem;
 
     h1{
         margin-bottom: 3rem;
-        color: #f26a2e;
+        color: #f89d13;
     }
 
     @media screen and (max-width: 500px){
@@ -63,7 +63,7 @@ const FooterLinksWrapper = styled.div`
 const FooterLinkItems = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-end;
     padding: 1rem 2rem;
 
     @media screen and (max-width: 500px){
@@ -86,4 +86,26 @@ const FooterLink = styled(Link)`
         transition: 0.3s ease-out;
     }
 
+`
+// The link to each of the pages
+const NavLinkIcon = styled(Link)`
+  color: #fff;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 .5rem;
+  font-size: 1.5rem;
+  height: 100%;
+  cursor: pointer;
+  
+`
+
+const NavBtn = styled.div`
+  display: flex;
+  align-items: center;
+  margin-right: 24px;
+
+  @media screen and (max-width: 768px){
+    display: none;
+  }
 `
