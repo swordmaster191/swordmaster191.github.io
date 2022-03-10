@@ -19,15 +19,6 @@ const Hero = () => {
                     <Button primary="true" big="true" round="true" to="#about">About Me</Button>
                 </HeroItems>
             </HeroContent>
-            <HeroItemsVideo>
-            <HeroContentVideo>
-            <VideoBackground data-sal="fade"
-            data-sal-duration="1000" // changes duration of the animation (from 200 to 2000 ms)
-            data-sal-delay="100" // adds delay to the animation (from 5 to 1000 ms)
-            data-sal-easing="easeInSine" // sets easing for the animation (see easings.net for reference)
-            src={Video} type="video/mp4" autoPlay loop muted playsInline />
-            </HeroContentVideo>
-            </HeroItemsVideo>
         </HeroContainer>
     )
 }
