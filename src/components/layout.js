@@ -1,17 +1,12 @@
-import * as React from "react"
-import Header from "./Header"
-import { GlobalStyle } from "./styles/GlobalStyles"
+import React from "react"
+// import "../css/main.css"
+import Navbar from "./Navbar"
+import Sidebar from "./Sidebar"
 import Footer from "./Footer"
-
-const Layout = ({children }) => {
-    return (
+const Layout = ({ children }) => {
+  return (
     <>
-    <GlobalStyle />
-      <Header/>
-          <main>
-          {children}
-          </main>
-        <Footer/>
+      <h2>layout component</h2>
     </>
   )
 }

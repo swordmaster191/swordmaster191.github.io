@@ -1,13 +1,11 @@
-import * as React from "react"
-import { Link } from "gatsby"
+import React from "react"
+import Layout from "../components/Layout"
+import { graphql } from "gatsby"
+import Title from "../components/Title"
+import Image from "gatsby-image"
+// ...GatsbyImageSharpFluid
+const About = () => {
+  return <h2>about page</h2>
+}
 
-import Layout from "../components/layout"
-import Seo from "../components/seo"
-
-const AboutPage = () => (
-    <Layout>
-    </Layout>
-  )
-  
-  export default AboutPage
-
+export default About

@@ -1,69 +1,55 @@
+/**
+ * Configure your Gatsby site with this file.
+ *
+ * See: https://www.gatsbyjs.org/docs/gatsby-config/
+ */
+
 module.exports = {
   siteMetadata: {
-    title: `Hello World!`,
-    description: ``,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    title: "WebDev Portfolio",
+    description: "This is WebDev Portfolio Site",
+    author: "@webdev",
+    twitterUsername: "@john_smilga",
+    image: "/twitter-img.png",
+    siteUrl: "https://testing-strapi-gatsby-build.netlify.app",
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-image`,
-    `gatsby-plugin-styled-components`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/assets/images`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `videos`,
-        path: `${__dirname}/src/assets/videos`,
-      },
-    },
-    
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#663399`,
-        // This will impact how browsers show your PWA/website
-        // https://css-tricks.com/meta-theme-color-and-trickery/
-        // theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
-      },
-    },
-    `gatsby-plugin-react-image-map`,
-    `gatsby-transformer-json`,
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `./src/data/`,
+        name: `assets`,
+        path: `${__dirname}/src/assets/`,
       },
     },
     {
-      resolve: `gatsby-plugin-scroll-reveal`,
+      resolve: `gatsby-source-strapi`,
       options: {
-          threshold: 1,
-          disabled: false // Percentage of an element's area that needs to be visible to launch animation
-      }
+        apiURL: `http://localhost:1337`,
+        queryLimit: 1000, // Default to 100
+        //   contentTypes : `jobs`, `projects`, `blogs`,
+        //   singleType : `about`
+        //  ONLY ADD TO ARRAY IF YOU HAVE DATA IN STRAPI !!!!
+        contentTypes: [],
+        singleTypes: [],
+      },
     },
-    {
-      resolve: "gatsby-plugin-anchor-links",
-      options: {
-        offset: -100
-      }
-    },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    // {
+    //   resolve: `gatsby-plugin-webfonts`,
+    //   options: {
+    //     fonts: {
+    //       google: [
+    //         {
+    //           family: "Roboto",
+    //           variants: ["400", "700"],
+    //         },
+    //         { family: "Open Sans" },
+    //       ],
+    //     },
+    //   },
+    // },
   ],
-
 }

@@ -1,21 +1,12 @@
-import * as React from "react"
-import { Link } from "gatsby"
-
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+import React from "react"
+import { graphql } from "gatsby"
+import Layout from "../components/Layout"
 import Hero from "../components/Hero"
-import Abouts from "../components/Abouts"
-import Stats from "../components/Stats"
-import Contact from "../components/Contact"
-
-const IndexPage = () => (
-  <Layout>
-    <Seo title="Home" />
-    <Hero />
-    <Abouts />
-    <Stats />
-  </Layout>
-)
-
-export default IndexPage
-
+import Services from "../components/Services"
+import Jobs from "../components/Jobs"
+import Projects from "../components/Projects"
+import Blogs from "../components/Blogs"
+export default () => {
+  return <h2>index page</h2>
+}
+// ...GatsbyImageSharpFluid
