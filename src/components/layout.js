@@ -1,19 +1,15 @@
-import * as React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-
-import Header from "./header"
+import React from "react"
+import "../css/main.css"
 import Navbar from "./Navbar"
-import "./layout.css"
-
+import Sidebar from "./Sidebar"
+import Footer from "./Footer"
 const Layout = ({ children }) => {
-  return(
+  return (
     <>
-    <Navbar />
-    {children}
+      <Navbar/>
+      {children}
     </>
   )
-  }
-  
+}
 
 export default Layout

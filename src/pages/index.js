@@ -1,12 +1,12 @@
-import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
-
-import Layout from "../components/layout"
-import Seo from "../components/seo"
-
-const IndexPage = () => (
-  <Layout></Layout>
-)
-
-export default IndexPage
+import React from "react"
+import { graphql } from "gatsby"
+import Layout from "../components/Layout"
+import Hero from "../components/Hero"
+import Services from "../components/Services"
+import Jobs from "../components/Jobs"
+import Projects from "../components/Projects"
+import Blogs from "../components/Blogs"
+export default () => {
+  return <Layout></Layout>
+}
+// ...GatsbyImageSharpFluid
