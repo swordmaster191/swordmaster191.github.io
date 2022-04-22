@@ -1,3 +1,15 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
+const strapiConfig = {
+  apiURL: process.env.STRAPI_API_URL,
+  accessToken: process.env.STRAPI_TOKEN,
+  queryLimit: 1000,
+  collectionTypes: [`job`],
+  singleTypes: [],
+};
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -12,6 +24,10 @@ module.exports = {
         name: `images`,
         path: `${__dirname}/src/assets/`,
       },
+    },
+    {
+      resolve: `gatsby-source-strapi`,
+      options: strapiConfig,
     },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
