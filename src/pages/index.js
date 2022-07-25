@@ -37,9 +37,7 @@ export const query = graphql`
         image {
           localFile {
             childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid
-              }
+              gatsbyImageData
             }
           }
         }
@@ -47,4 +45,3 @@ export const query = graphql`
     }
   }
 `
-
