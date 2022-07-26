@@ -7,7 +7,7 @@ const strapiConfig = {
   accessToken: process.env.STRAPI_TOKEN,
   queryLimit: 1000,
   collectionTypes: [`job`, `project`],
-  singleTypes: [],
+  singleTypes: [`about`],
 };
 
 module.exports = {
@@ -29,6 +29,20 @@ module.exports = {
       resolve: `gatsby-source-strapi`,
       options: strapiConfig,
     },
+    /*{
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Sans Serif`,
+          },
+          {
+            family: `Poppins`,
+            variants: [`300`, `400`]
+          },
+        ],
+      },
+    },*/
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,

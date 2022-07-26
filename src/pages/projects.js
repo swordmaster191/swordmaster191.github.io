@@ -5,8 +5,16 @@ import Projects from "../components/Projects"
 import {Image, GatsbyImage} from "gatsby-plugin-image"
 // ...GatsbyImageSharpFluid
 
-const ProjectsPage = () => {
-  return <h2>projects page</h2>
+const ProjectsPage = ({
+  data:{allStrapiProject: {nodes: projects}}
+}) => {
+  return (
+    <Layout>
+      <section className="projects-page">
+        <Projects projects={projects} title="all projects" />
+      </section>
+    </Layout>
+  )
 }
 
 export const query = graphql`
