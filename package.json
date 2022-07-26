@@ -28,6 +28,7 @@
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
+    "gh-pages": "^4.0.0",
     "prettier": "^2.6.2"
   },
   "keywords": [
@@ -35,7 +36,8 @@
   ],
   "license": "0BSD",
   "scripts": {
-    "build": "gatsby build",
+    "deploy": "gatsby build && gh-pages -d public -b main",
+    "build": "cross-env gatsby build",
     "develop": "cross-env GATSBY_GRAPHQL_IDE=playground gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "gatsby develop",
