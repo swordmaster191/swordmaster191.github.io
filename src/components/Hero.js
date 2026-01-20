@@ -1,137 +1,39 @@
-import React from "react";
-import styled from "styled-components";
-import { Button } from "./Button";
-import Video from "../assets/videos/video.mp4";
-import { AnchorLink } from "gatsby-plugin-anchor-links";
+import React from "react"
+import Link from "next/link"
+import SocialLinks from "../constants/socialLinks"
+import Image from "next/image"
+import { MdTravelExplore } from "react-icons/md"
+import akaneGif from "../assets/akane.gif"
 
 const Hero = () => {
-    return (
-        <HeroContainer>
-            <HeroContent>
-                <HeroItems
-                data-sal="fade"
-                data-sal-duration="1000" // changes duration of the animation (from 200 to 2000 ms)
-                data-sal-delay="100" // adds delay to the animation (from 5 to 1000 ms)
-                data-sal-easing="easeInSine" // sets easing for the animation (see easings.net for reference)
-                >
-                    <HeroH1>KRIT VISITSTUMP</HeroH1>
-                    <HeroP>Passionate college student majoring in Computer Science</HeroP>
-                    <Button primary="true" big="true" round="true" to="#about">About Me</Button>
-                </HeroItems>
-            </HeroContent>
-            <HeroItemsVideo>
-            <HeroContentVideo>
-            <VideoBackground src={Video} type="video/mp4" autoPlay loop muted playsInline />
-            </HeroContentVideo>
-            </HeroItemsVideo>
-        </HeroContainer>
-    )
+  return (
+    <header className="hero">
+      <div className="section-center hero-center">
+        <div className="hero-photo-container">
+          <Image 
+            src={akaneGif} 
+            alt="Akane Kurokawa" 
+            className="hero-photo"
+            width={282}
+            height={282}
+            unoptimized={true}
+          />
+          <span className="photo-tooltip">Akane!</span>
+        </div>
+        <article className="hero-info" style={{ textAlign: 'center' }}>
+          <h1>Krit Visitstump</h1>
+          {/* <h4 className="job-title">Senior Modern Workplace Solutions Specialist</h4> */}
+          <p className="hero-text">
+            I'm a Computer Science graduate and experienced developer passionate about building efficient solutions. 
+            Currently driving productivity and shaping the future of modern workplace at <a href="https://www.agoda.com" target="_blank" rel="noopener noreferrer" className="company-logo"><MdTravelExplore className="company-icon" /> Agoda</a>.
+          </p>
+          <div className="hero-socials">
+             <SocialLinks />
+          </div>
+        </article>
+      </div>
+    </header>
+  )
 }
 
 export default Hero
-
-const HeroContainer = styled.div`
-    background: #393e46;
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    height: 100vh;
-    padding: 0 1rem;
-    position: relative;
-    margin-top: -80px;
-    color: #fff;
-
-    :before{
-        content: "";
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        z-index: 2;
-        background: linear-gradient(
-            180deg,
-            rgba(0, 0, 0, 0.3) 0%,
-            rgba(0, 0, 0, 0.6) 100%
-            ),
-            linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, transparent 100%);
-    }
-
-`
-const HeroContentVideo = styled.div`
-    display: grid;
-    grid-template-columns: fr;
-    margin-top: 2rem;
-    grid-gap: 10px;
-
-    @media screen and (max-width: 768px){
-        grid-template-columns: 1fr;
-    }
-`
-
-const HeroBackground = styled.div`
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-`
-
-const VideoBackground = styled.video`
-    width: 95%;
-    height: 95%;
-    filter: grayscale(100%);
-`
-
-const HeroContent = styled.div`
-    z-index: 3;
-    height: calc(100vh - 80px);
-    max-height: 100%;
-    padding: 0rem calc((100vw - 1300px) / 2);
-`
-
-const HeroItems = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: baseline;
-    text-align: left;
-    height: 100vh;
-    max-height: 100%;
-    padding: 0;
-    color: #fff;
-    line-height: 1.1;
-    font-weight: bold;
-`
-
-const HeroItemsVideo = styled.div`
-display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: baseline;
-    text-align: right;
-    height: 100vh;
-    max-height: 100%;
-    padding: 0;
-    color: #fff;
-    line-height: 1.1;
-    font-weight: bold;
-
-`
-
-const HeroH1 = styled.div`
-    color: #f89d13;
-    font-size: clamp(1.5rem, 6vw, 4rem);
-    margin-bottom: 1.5rem;
-    letter-spacing: 3px;
-`
-
-const HeroP = styled.p`
-    font-size: clamp(1rem, 3vw, 1.5rem);
-    margin-bottom: 2rem;
-    font-weight: 400;
-    
-`
