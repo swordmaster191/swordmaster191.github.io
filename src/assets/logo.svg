@@ -4,7 +4,7 @@
       .cls-1 {
         font-size: 625px;
         filter: url(#filter);
-        fill: #102a42;
+        fill: #ffffff;
         font-family: Roboto;
         font-weight: 700;
       }
@@ -14,7 +14,7 @@
       }
 
       .cls-3 {
-        fill: #2caeba;
+        fill: #8b5cf6;
       }
     </style>
     <filter id="filter" x="-35" y="43" width="4217" height="665" filterUnits="userSpaceOnUse">

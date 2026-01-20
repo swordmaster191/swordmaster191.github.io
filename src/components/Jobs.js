@@ -1,35 +1,11 @@
+"use client"
 import React from "react"
 import Title from "./Title"
 import { FaAngleDoubleRight } from "react-icons/fa"
-import { graphql, useStaticQuery } from "gatsby"
-import { Link } from "gatsby"
-import { icons } from "react-icons"
-
-const query = graphql`
-  {
-    allStrapiJob(sort: {fields: strapi_id, order: DESC}) {
-      nodes {
-        company
-        date
-        strapi_id
-        position
-        description {
-          strapi_id
-          name
-        }
-      }
-    }
-  }
-`
+import Link from "next/link"
+import jobs from "../constants/experience"
 
 const Jobs = () => {
-  const data = useStaticQuery(query)
-  const {
-    allStrapiJob:{nodes: jobs},
-} = data
-
-  
-
   const[value, setValue] = React.useState(0)
   const{company, position, date, description} =  jobs[value]
 
@@ -38,9 +14,9 @@ const Jobs = () => {
   <div className="jobs-center">
     <div className="btn-container">
       {jobs.map((item, index) => {
-        return <button key={item.strapi_id}
+        return <button key={item.id}
         onClick={()=>setValue(index)}
-        className={`job-btn 
+        className={`job-btn
         ${index === value && 'active-btn'}`}>
           {item.company}
         </button>
@@ -53,8 +29,7 @@ const Jobs = () => {
       {
         description.map((item)=>
           {
-            console.log(item.name)
-            return <div key={item.strapi_id} className="job-desc">
+            return <div key={item.id} className="job-desc">
               <FaAngleDoubleRight className="job-icon"></FaAngleDoubleRight>
                 <p>{item.name}</p>
             </div>
@@ -63,7 +38,7 @@ const Jobs = () => {
       }
     </article>
   </div>
-  <Link to="/about" className="btn center-btn">
+  <Link href="/about" className="btn center-btn">
       More info
   </Link>
   </section>

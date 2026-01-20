@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="252" height="45" viewBox="0 0 4200 750">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 625px;
+        filter: url(#filter);
+        fill: #ffffff;
+        font-family: Roboto;
+        font-weight: 700;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        fill: #8b5cf6;
+      }
+    </style>
+    <filter id="filter" x="-35" y="43" width="4217" height="665" filterUnits="userSpaceOnUse">
+      <feOffset result="offset" dx="-29" in="SourceAlpha"/>
+      <feGaussianBlur result="blur" stdDeviation="5.385"/>
+      <feFlood result="flood" flood-opacity="0.35"/>
+      <feComposite result="composite" operator="in" in2="blur"/>
+      <feBlend result="blend" in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <text id="Krit_Visitstump" data-name="Krit Visitstump" class="cls-1" x="-16.352" y="550">Krit<tspan class="cls-2"> <tspan class="cls-3">Visitstump</tspan></tspan></text>
+</svg>
